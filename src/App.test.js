@@ -45,12 +45,12 @@ describe("Componente Principal", () => { // Cenário de testes
 
         it("que é um saque, a transação deve ser realizada", () => {
 
-            const { getByText, getByLabelText, getByTestId } = render(<App />);
-
-            const saldo = getByText("R$ 1000");
-            const transacao = getByLabelText("Saque");
-            const valor = getByTestId("valor");
-            const botao = getByText("Realizar operação");
+            render(<App />);
+            
+            const saldo = screen.getByText("R$ 1000");
+            const transacao = screen.getByLabelText("Saque");
+            const valor = screen.getByTestId("valor");
+            const botao = screen.getByText("Realizar operação");
 
             expect(saldo.textContent).toBe("R$ 1000");
 
