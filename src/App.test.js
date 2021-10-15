@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import React from 'react';
-import App from './App';
+import App, {calcularNovoSaldo} from './App';
 
 
 describe("Componente Principal", () => { // Cenário de testes
@@ -21,6 +21,27 @@ describe("Componente Principal", () => { // Cenário de testes
             render(<App />);
             expect(screen.getByText("Realizar operação")).toBeInTheDocument();
         })
+    });
+
+    describe("Quando eu realizo uma transação", () => {
+
+        //TESTANDO FUNÇÕES
+        it('que é um saque, o valor vai diminui', () => {
+            const valores = {
+                transacao: 'saque',
+                valor: 50
+            }
+            const novoSaldo = calcularNovoSaldo(valores, 150);
+            expect(novoSaldo).toBe(100); 
+        });
+        it('que é um deposito, o valor vai aumentar', () => {
+            const valores = {
+                transacao: 'deposito',
+                valor: 50
+            }
+            const novoSaldo = calcularNovoSaldo(valores, 100);
+            expect(novoSaldo).toBe(150); 
+        });
     })
 })
 
