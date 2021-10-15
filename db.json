@@ -140,6 +140,24 @@
       "valor": "10",
       "data": "15/10/2021",
       "id": 23
+    },
+    {
+      "transacao": "saque",
+      "valor": "10",
+      "data": "15/10/2021",
+      "id": 24
+    },
+    {
+      "transacao": "saque",
+      "valor": "10",
+      "data": "15/10/2021",
+      "id": 25
+    },
+    {
+      "transacao": "saque",
+      "valor": "10",
+      "data": "15/10/2021",
+      "id": 26
     }
   ]
 }
